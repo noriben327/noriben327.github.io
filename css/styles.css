@@ -11571,6 +11571,7 @@ a {
   text-decoration-color: rgba(255, 111, 183, 0.38);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
 }
 a:hover {
   text-decoration-color: rgba(255, 111, 183, 0.92);
