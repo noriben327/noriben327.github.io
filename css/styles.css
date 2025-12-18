@@ -11436,3 +11436,311 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+
+/* ========================================================================== */
+/*  Portfolio refresh (no index.html edits)                                   */
+/*  Theme: dark gray base + subtle pink glow (future/luxury/friendly)         */
+/* ========================================================================== */
+
+:root {
+  color-scheme: dark;
+
+  /* Theme tokens */
+  --bg0: #0f1115;
+  --bg1: #151821;
+  --text: #e6e7ea;
+  --muted: #aeb2bd;
+  --line: rgba(201, 203, 210, 0.14);
+  --accent: #ff6fb7;
+  --accent2: #c9cbd2;
+  --shadow: 0 22px 65px rgba(0, 0, 0, 0.55);
+
+  --radius: 18px;
+  --radius-sm: 12px;
+  --blur: 10px;
+
+  --glow-1: rgba(255, 111, 183, 0.22);
+  --glow-2: rgba(255, 111, 183, 0.12);
+  --ring: rgba(255, 111, 183, 0.55);
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans JP", "Noto Sans", "Hiragino Sans", "Yu Gothic UI",
+    "Yu Gothic", Meiryo, sans-serif;
+
+  /* Map to Bootstrap tokens used by the template */
+  --bs-body-bg: var(--bg0);
+  --bs-body-color: var(--text);
+  --bs-body-color-rgb: 230, 231, 234;
+  --bs-body-bg-rgb: 15, 17, 21;
+  --bs-primary: var(--accent);
+  --bs-primary-rgb: 255, 111, 183;
+  --bs-secondary: #8d93a2;
+  --bs-secondary-rgb: 141, 147, 162;
+  --bs-link-color: var(--text);
+  --bs-link-hover-color: var(--text);
+}
+
+html {
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  background:
+    radial-gradient(1200px 900px at 12% 10%, var(--glow-1), transparent 58%),
+    radial-gradient(1100px 800px at 88% 22%, var(--glow-2), transparent 62%),
+    linear-gradient(180deg, var(--bg1), var(--bg0));
+  color: var(--text);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035), transparent 40%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(201, 203, 210, 0.06) 0px,
+      rgba(201, 203, 210, 0.06) 1px,
+      transparent 1px,
+      transparent 120px
+    );
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+}
+
+::selection {
+  background: rgba(255, 111, 183, 0.25);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: var(--font-sans);
+  color: var(--text);
+  font-weight: 750;
+  letter-spacing: 0.01em;
+}
+
+p,
+li,
+small,
+.lead {
+  color: var(--text);
+}
+
+.lead {
+  color: var(--muted);
+}
+
+.resume-section-content {
+  max-width: 62rem;
+}
+
+.resume-section-content > h2 {
+  letter-spacing: 0.02em;
+}
+
+.resume-section-content > h3,
+.resume-section-content > h4 {
+  margin-top: clamp(1.5rem, 3.4vw, 2.25rem);
+}
+
+.subheading {
+  font-family: var(--font-sans);
+  font-weight: 650;
+  color: var(--muted);
+}
+
+hr {
+  opacity: 1;
+  background-color: var(--line);
+}
+
+/* Links: subtle pink "bleed" underline (always visible) */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 111, 183, 0.38);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover {
+  text-decoration-color: rgba(255, 111, 183, 0.92);
+}
+
+/* Keep nav links clean (template-specific) */
+#sideNav .nav-link {
+  text-decoration: none;
+}
+
+/* Accessible focus ring */
+:where(a, button, [role="button"], input, textarea, select, summary, .navbar-toggler):focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 3px var(--ring), 0 0 0 1px rgba(15, 17, 21, 0.9) inset;
+  border-radius: var(--radius-sm);
+}
+
+/* Side nav: glassy dark panel with subtle pink edge glow */
+#sideNav {
+  /* Keep Bootstrap's fixed nav behavior (avoid overriding to relative). */
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  background:
+    linear-gradient(180deg, rgba(21, 24, 33, 0.88), rgba(15, 17, 21, 0.76));
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+  background-size: auto !important;
+  background-position: 0 0 !important;
+  border-right: 1px solid rgba(201, 203, 210, 0.14);
+  box-shadow: 12px 0 60px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(var(--blur));
+}
+
+#sideNav::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -1px;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 111, 183, 0.42),
+    transparent
+  );
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+#sideNav .navbar-brand .img-profile {
+  border: 1px solid rgba(201, 203, 210, 0.18);
+  box-shadow: 0 0 0 1px rgba(255, 111, 183, 0.15), 0 18px 55px rgba(0, 0, 0, 0.45);
+}
+
+#sideNav .navbar-nav .nav-item .nav-link {
+  color: rgba(230, 231, 234, 0.78);
+}
+#sideNav .navbar-nav .nav-item .nav-link:hover,
+#sideNav .navbar-nav .nav-item .nav-link.active {
+  color: var(--text);
+  text-shadow: 0 0 20px rgba(255, 111, 183, 0.18);
+}
+
+/* Sections: better rhythm and max-width */
+section.resume-section {
+  position: relative;
+  display: block;
+  max-width: 78rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: clamp(4.25rem, 8vw, 6.5rem) clamp(1.1rem, 3.8vw, 3rem);
+}
+
+@media (min-width: 768px) {
+  section.resume-section {
+    min-height: auto;
+  }
+}
+
+/* "Card" styling for common blocks in this template */
+.resume-section-content > .d-flex {
+  border-radius: var(--radius);
+  border: 1px solid rgba(201, 203, 210, 0.14);
+  background: rgba(21, 24, 33, 0.58);
+  box-shadow: var(--shadow);
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .resume-section-content > .d-flex {
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  }
+  .resume-section-content > .d-flex:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 111, 183, 0.22);
+    background: rgba(21, 24, 33, 0.64);
+  }
+}
+
+/* Embed cards (Twitter fallback / loading state) */
+blockquote.twitter-tweet {
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(201, 203, 210, 0.14);
+  background: rgba(21, 24, 33, 0.55);
+  color: var(--muted);
+}
+
+/* Images: subtle rounding + lift */
+img {
+  max-width: 100%;
+  height: auto;
+}
+.img-thumbnail,
+img.rounded,
+img.rounded-circle,
+img.rounded-3,
+img.rounded-2,
+img.rounded-1 {
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.35);
+}
+.img-thumbnail {
+  border-radius: var(--radius-sm);
+  border-color: rgba(201, 203, 210, 0.14);
+  background-color: rgba(21, 24, 33, 0.35);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .img-thumbnail {
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  }
+  a:hover .img-thumbnail {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+    border-color: rgba(255, 111, 183, 0.22);
+  }
+}
+
+/* Social icons: softer, premium glow */
+.social-icons .social-icon {
+  background:
+    linear-gradient(180deg, rgba(201, 203, 210, 0.12), rgba(201, 203, 210, 0.06));
+  border: 1px solid rgba(201, 203, 210, 0.14);
+  color: rgba(230, 231, 234, 0.9);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.38);
+}
+.social-icons .social-icon:hover {
+  background:
+    linear-gradient(180deg, rgba(255, 111, 183, 0.22), rgba(201, 203, 210, 0.06));
+  border-color: rgba(255, 111, 183, 0.22);
+  color: var(--text);
+}
+
+/* Utility: ensure "primary" text reads as accent */
+.text-primary {
+  color: rgba(255, 111, 183, 0.92) !important;
+  text-shadow: 0 0 22px rgba(255, 111, 183, 0.16);
+}
+
+/* Reduce motion: disable transitions/animations we add */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

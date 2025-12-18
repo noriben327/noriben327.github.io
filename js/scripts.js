@@ -31,4 +31,23 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Accessibility: give icon-only links discernible names
+    const socialLinks = document.querySelectorAll('.social-icons a.social-icon');
+    socialLinks.forEach((link) => {
+        if (link.getAttribute('aria-label')) return;
+
+        const href = link.getAttribute('href') || '';
+        const icon = link.querySelector('i');
+        const iconClass = icon ? icon.className : '';
+
+        let label = 'Social link';
+        if (iconClass.includes('fa-twitter') || href.includes('twitter.com')) label = 'X (Twitter)';
+        else if (iconClass.includes('fa-youtube') || href.includes('youtube.com') || href.includes('youtu.be')) label = 'YouTube';
+        else if (iconClass.includes('fa-github') || href.includes('github.com')) label = 'GitHub';
+        else if (href) label = href.replace(/^https?:\/\//, '').replace(/\/$/, '');
+
+        link.setAttribute('aria-label', label);
+        link.setAttribute('title', label);
+    });
+
 });
