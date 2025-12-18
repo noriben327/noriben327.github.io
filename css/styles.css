@@ -123,6 +123,7 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: calc(1.475rem + 2.7vw);
+  color: rgba(255, 111, 183, 0.92) !important;
 }
 @media (min-width: 1200px) {
   h2, .h2 {
