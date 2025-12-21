@@ -1,4 +1,2 @@
-test テスト
-vrc string
-てすと
-テスト
+VRCStringDownloaderで
+外部からテキスト読み込み成功🐢
