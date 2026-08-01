@@ -1,53 +1,73 @@
-/*!
-* Start Bootstrap - Resume v7.0.5 (https://startbootstrap.com/theme/resume)
-* Copyright 2013-2022 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
-*/
 //
-// Scripts
-// 
+// noriben portfolio — nav behaviour (no framework)
+//
 
-window.addEventListener('DOMContentLoaded', event => {
+(() => {
+    const nav = document.getElementById('railNav');
+    const toggle = document.querySelector('.rail-toggle');
+    const links = Array.from(document.querySelectorAll('.rail-nav a[href^="#"]'));
 
-    // Activate Bootstrap scrollspy on the main nav element
-    const sideNav = document.body.querySelector('#sideNav');
-    if (sideNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#sideNav',
-            offset: 74,
+    // --- Mobile menu -------------------------------------------------------
+
+    const closeMenu = () => {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+    };
+
+    if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+            const open = nav.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', String(open));
+        });
+
+        links.forEach((link) => link.addEventListener('click', closeMenu));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMenu();
+        });
+    }
+
+    // --- Scrollspy ---------------------------------------------------------
+    // A probe line sits at 35% of the viewport; the section crossing it wins.
+    // Ratio-based observation is unusable here because #experience is many
+    // screens tall while #contact is short.
+
+    const sections = links
+        .map((link) => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+    if (!sections.length) return;
+
+    let current = null;
+
+    const setActive = (id) => {
+        if (id === current) return;
+        current = id;
+        links.forEach((link) => {
+            link.classList.toggle('is-active', link.getAttribute('href') === '#' + id);
         });
     };
 
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
-            }
+    const update = () => {
+        const probe = window.innerHeight * 0.35;
+        const atBottom =
+            window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+
+        if (atBottom) {
+            setActive(sections[sections.length - 1].id);
+            return;
+        }
+
+        let active = sections[0];
+        sections.forEach((section) => {
+            if (section.getBoundingClientRect().top <= probe) active = section;
         });
-    });
+        setActive(active.id);
+    };
 
-    // Accessibility: give icon-only links discernible names
-    const socialLinks = document.querySelectorAll('.social-icons a.social-icon');
-    socialLinks.forEach((link) => {
-        if (link.getAttribute('aria-label')) return;
-
-        const href = link.getAttribute('href') || '';
-        const icon = link.querySelector('i');
-        const iconClass = icon ? icon.className : '';
-
-        let label = 'Social link';
-        if (iconClass.includes('fa-twitter') || href.includes('twitter.com')) label = 'X (Twitter)';
-        else if (iconClass.includes('fa-youtube') || href.includes('youtube.com') || href.includes('youtu.be')) label = 'YouTube';
-        else if (iconClass.includes('fa-github') || href.includes('github.com')) label = 'GitHub';
-        else if (href) label = href.replace(/^https?:\/\//, '').replace(/\/$/, '');
-
-        link.setAttribute('aria-label', label);
-        link.setAttribute('title', label);
-    });
-
-});
+    // Called straight from the event — four getBoundingClientRect reads is
+    // cheap, and rAF would stall whenever the page is not being painted.
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
+})();

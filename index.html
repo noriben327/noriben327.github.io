@@ -12,339 +12,567 @@
         </script>
 
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="VRChatやUnity向けのアセット販売をしています。" />
+        <meta name="author" content="noriben" />
+        <meta name="theme-color" content="#131315" />
         <title>noriben portfolio</title>
         <link rel="icon" type="image/x-icon" href="assets/img/noribenFavicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
 
-        
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="noriben portfolio" />
+        <meta property="og:description" content="VRChatやUnity向けのアセット販売をしています。" />
+        <meta property="og:image" content="https://noribenx.com/assets/img/AmamariNoribenIcon500.jpg" />
+        <meta name="twitter:card" content="summary" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">noriben portfolio</span>
-                <span class="d-none d-lg-block"><img width="80" height="80" class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/AmamariNoribenIcon500.jpg" alt="noriben" /></span>
+        <!-- Navigation -->
+        <header class="rail" id="sideNav">
+            <a class="rail-brand" href="#page-top">
+                <img class="rail-avatar" width="80" height="80" src="assets/img/AmamariNoribenIcon500.jpg" alt="noriben" />
+                <span class="rail-brand-text">noriben portfolio</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#links">Links</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+            <button class="rail-toggle" type="button" aria-expanded="false" aria-controls="railNav" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="rail-nav" id="railNav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#links">Links</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-            </div>
-        </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <div class="container-fluid"><img width="180" height="180" class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/AmamariNoribenIcon500.jpg" alt="noriben" /></div>
-                    <h1 class="mb-4">
+            </nav>
+        </header>
+
+        <main class="shell">
+
+            <!-- About -->
+            <section class="section section--hero" id="about">
+                <div class="wrap">
+                    <img class="hero-avatar" width="180" height="180" src="assets/img/AmamariNoribenIcon500.jpg" alt="noriben" />
+                    <h1 class="hero-title">
                         noriben
-                        <span class="text-primary">portfolio</span>
+                        <span class="accent">portfolio</span>
                     </h1>
-                    
-                    <p class="lead mb-5">
+                    <p class="lead">
                         🐢 VRChatやUnity向けの<a href="https://noriben.booth.pm/">アセット販売</a>をしています。
                     </p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="https://x.com/noriben327"><i class="fab fa-twitter"></i></a>
-                        <a class="social-icon" href="https://www.youtube.com/@noriben"><i class="fab fa-youtube"></i></a>
-                        <a class="social-icon" href="https://github.com/noriben327"><i class="fab fa-github"></i></a>
-                    </div>
+                    <ul class="social">
+                        <li>
+                            <a href="https://x.com/noriben327" aria-label="X (Twitter)" title="X (Twitter)">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@noriben" aria-label="YouTube" title="YouTube">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.08 0 12 0 12s0 3.92.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.81M9.55 15.57V8.43L15.82 12z"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/noriben327" aria-label="GitHub" title="GitHub">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2.16c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.3-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5"/></svg>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </section>
-            <hr class="m-0" />
 
-            <!-- Experience-->
-            <section class="resume-section" id="experience">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Experience</h2>
+            <!-- Experience -->
+            <section class="section" id="experience">
+                <div class="wrap">
+                    <h2 class="section-title">Experience</h2>
 
-                    <h3 class="mb-4">アセット販売</h3>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-4">
-                        <div class="flex-grow-1">
-                            <div class="mb-1 container">
-                                <a href="https://noriben.booth.pm/"><img class="img-fluid img-thumbnail rounded mx-auto mb-2"  width="240" height="240" src="assets/img/noribenBoothThumb.jpg" alt="booth" /></a>
-                            </div>
-                            <p><a href="https://noriben.booth.pm/">Booth</a>にてUnityやVRChat等向けのエフェクトを制作・販売しています
-                            </p>
-                            <p><a href="https://www.youtube.com/@noriben">Youtube</a>に今まで作ってきたものの動画があります。
-                            </p>
+                    <h3 class="block-title">アセット販売</h3>
+                    <div class="feature">
+                        <a class="feature-media" href="https://noriben.booth.pm/">
+                            <img width="240" height="240" src="assets/img/noribenBoothThumb.jpg" alt="booth" />
+                        </a>
+                        <div class="feature-body">
+                            <p><a href="https://noriben.booth.pm/">Booth</a>にてUnityやVRChat等向けのエフェクトを制作・販売しています</p>
+                            <p><a href="https://www.youtube.com/@noriben">Youtube</a>に今まで作ってきたものの動画があります。</p>
                         </div>
                     </div>
 
-                    <h3 class="mb-4">スキル・ツール</h3>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-4">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">スキル</div>
+                    <h3 class="block-title">スキル・ツール</h3>
+                    <div class="panel panel--split">
+                        <div class="field">
+                            <div class="field-label">スキル</div>
                             <p>Unity環境におけるエフェクト制作、シェーダー作成、テクスチャ作成、プロシージャルモデリングなど</p>
-                            <div class="subheading mb-1">使用するツール・言語</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-label">使用するツール・言語</div>
                             <p>Unity(Built-in, URP, HDRP), Shader, Houdini, Substance Designer, Blender, VFXGraph, Github, etc...</p>
                         </div>
                     </div>
 
+                    <!-- 作ったもの -->
+                    <h3 class="block-title">作ったもの</h3>
 
+                    <div class="timeline">
 
-                    <!-- 関わった案件など -->
-                    <div class ="mb-5"></div>
-                    <h3 class="mb-4">関わった案件など</h3>
+                        <section class="year">
+                            <h4 class="year-label"><span>2026</span></h4>
+                            <div class="year-entries">
 
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2023/11 バーチャルマーケット2023 Winter</div>
-                            <p>VRイベント用のエフェクト・シェーダー制作<br/>
-                                <a href="https://event.vket.com/">https://event.vket.com/</a><br/>
-                                [Unity(Built-in), Shader]
-                            </p>
-                        </div>
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">1</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">[ピーヒョロロ]鳴き声付きとんびパーティクル / Black Kite Particle with Bird Call</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/7886098">https://noriben.booth.pm/items/7886098</a></p>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">1</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">もくもくフォグパーティクル / Fog Particle</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/7856565">https://noriben.booth.pm/items/7856565</a></p>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">1</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">[VRC Light Volumes用]ミラーボール・サンキャッチャーライト / Mirror Ball &amp; Suncatcher Light</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/7844967">https://noriben.booth.pm/items/7844967</a></p>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">1</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">空間を泳ぐネオンテトラパーティクル / NeonTetra Particle</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/7813459">https://noriben.booth.pm/items/7813459</a></p>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </section>
+
+                        <section class="year">
+                            <h4 class="year-label"><span>2025</span></h4>
+                            <div class="year-entries">
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">12</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">光の雨の波紋投影シェーダー / Rain Ripple Projection Shader</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/7745532">https://noriben.booth.pm/items/7745532</a></p>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </section>
+
+                        <section class="year">
+                            <h4 class="year-label"><span>2024</span></h4>
+                            <div class="year-entries">
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">3</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">ビームライトコントロールシステム / BeamLight Control System</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/5553388">https://noriben.booth.pm/items/5553388</a></p>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">2</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">LEDバーライトシステム  / LED BarLight System [AudioLinkと動画反映でいい感じに光るシステム一式]</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/5465615">https://noriben.booth.pm/items/5465615</a></p>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">1</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">天窓ライトシャフトシェーダー / Skylight Window LightShaft Shader</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/5433774">https://noriben.booth.pm/items/5433774</a></p>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </section>
+
+                        <section class="year">
+                            <h4 class="year-label"><span>2023</span></h4>
+                            <div class="year-entries">
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">11</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">バーチャルマーケット2023 Winter</h5>
+                                        <p>VRイベント用のエフェクト・シェーダー制作</p>
+                                        <p class="entry-links"><a href="https://event.vket.com/">https://event.vket.com/</a></p>
+                                        <ul class="tags"><li>Unity(Built-in)</li><li>Shader</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">8</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">軽量雨粒シェーダー / RainDropShader</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/4999112">https://noriben.booth.pm/items/4999112</a></p>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">8</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">雨の波紋つき置くだけ水たまりシェーダー / Rain Puddle Shader</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/4993546">https://noriben.booth.pm/items/4993546</a></p>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">8</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">Quest対応ベーシックウォーターシェーダー / QuestBasicWaterShader</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/4967253">https://noriben.booth.pm/items/4967253</a></p>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">7</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">バーチャルマーケット2023 Summer</h5>
+                                        <p>VRイベント用のエフェクト・シェーダー制作</p>
+                                        <p class="entry-links"><a href="https://event.vket.com/">https://event.vket.com/</a></p>
+                                        <ul class="tags"><li>Unity(Built-in)</li><li>Shader</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">6</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">JT Tobacco Farm</h5>
+                                        <p>VRChatワールド用のエフェクト・シェーダー制作</p>
+                                        <p class="entry-links"><a href="https://prtimes.jp/main/html/rd/p/000000010.000101057.html">JT グループのサステナビリティの取り組みを体験できるメタバース空間「JT Tobacco Farm」を公開</a></p>
+                                        <ul class="tags"><li>Unity(Built-in)</li><li>Shader</li><li>U#</li></ul>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </section>
+
+                        <section class="year">
+                            <h4 class="year-label"><span>2022</span></h4>
+                            <div class="year-entries">
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">12</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">バーチャルマーケット2022 Winter</h5>
+                                        <p>VRイベント用のエフェクト・シェーダー制作</p>
+                                        <p class="entry-links"><a href="https://winter2022.vket.com/">https://winter2022.vket.com/</a></p>
+                                        <ul class="tags"><li>Unity(Built-in)</li><li>Shader</li></ul>
+                                        <figure class="quote">
+                                            <blockquote lang="ja">現在開催されているバーチャルマーケット2022Winterにてパーティクル班の1人としてエフェクトのお手伝いをしました～。（シェーダー・パーティクルなど）<a href="https://twitter.com/hashtag/Vket?src=hash&amp;ref_src=twsrc%5Etfw">#Vket</a> <a href="https://twitter.com/hashtag/VRChat?src=hash&amp;ref_src=twsrc%5Etfw">#VRChat</a> <a href="https://t.co/Q0Wji1T2GT">pic.twitter.com/Q0Wji1T2GT</a></blockquote>
+                                            <figcaption>&mdash; noriben🌕 (@noriben327) <a href="https://twitter.com/noriben327/status/1601168780729626625?ref_src=twsrc%5Etfw">December 9, 2022</a></figcaption>
+                                        </figure>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">11</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">メタバース用エフェクト制作（非公開）</h5>
+                                        <p>メタバースの体験型イベント用のエフェクトの制作</p>
+                                        <ul class="tags"><li>Unity(URP)</li><li>Shader</li><li>VFXGraph</li><li>C#</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">10</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">メタバース用エフェクト制作（非公開）</h5>
+                                        <p>メタバースの体験型イベント用のエフェクトの制作</p>
+                                        <ul class="tags"><li>Unity(URP)</li><li>Shader</li><li>VFXGraph</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">10</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">ARライブ用エフェクト制作（非公開）</h5>
+                                        <p>ARライブ用のエフェクトの制作</p>
+                                        <ul class="tags"><li>Unity(Built-in)</li><li>Shader</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">8</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">メタバース用エフェクト制作（非公開）</h5>
+                                        <p>メタバースの体験型イベント用のエフェクトの制作</p>
+                                        <ul class="tags"><li>Unity(URP)</li><li>Shader</li><li>VFXGraph</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">6</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">VRライブ用エフェクト制作（非公開）</h5>
+                                        <p>VRライブ用のエフェクトの制作</p>
+                                        <ul class="tags"><li>Unity(HDRP)</li><li>Shader</li><li>VFXGraph</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">5</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">ライトシャフトパーティクル / LightShaft Particle</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/3847304">https://noriben.booth.pm/items/3847304</a></p>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">4</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">バーチャルマーケット2022 Summer</h5>
+                                        <p>VRイベント用のエフェクト制作</p>
+                                        <p class="entry-links"><a href="https://summer2022.vket.com/">https://summer2022.vket.com/</a></p>
+                                        <ul class="tags"><li>Unity(Built-in)</li><li>Shader</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">2</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">コースティクスプロジェクターシェーダー / Caustics Projector Shader</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/3666514">https://noriben.booth.pm/items/3666514</a></p>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">2</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">LEDパネルシェーダー / LED Panel Shader</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/3654920">https://noriben.booth.pm/items/3654920</a></p>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">2</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">ARライブ用エフェクト制作（非公開）</h5>
+                                        <p>ARライブ用のエフェクトの制作</p>
+                                        <ul class="tags"><li>Unity(Built-in)</li><li>Shader</li></ul>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </section>
+
+                        <section class="year">
+                            <h4 class="year-label"><span>2021</span></h4>
+                            <div class="year-entries">
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">12</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">ARライブ用エフェクト制作（非公開）</h5>
+                                        <p>ARライブ用のエフェクトの制作</p>
+                                        <ul class="tags"><li>Unity(Built-in)</li><li>Shader</li><li>C#</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">12</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">バーチャルマーケット2021</h5>
+                                        <p>VRイベント用のエフェクト制作</p>
+                                        <p class="entry-links"><a href="https://winter2021.vket.com/">https://winter2021.vket.com/</a></p>
+                                        <ul class="tags"><li>Unity(Built-in)</li><li>Shader</li><li>U#</li></ul>
+                                        <figure class="quote">
+                                            <blockquote lang="ja">現在開催されているバーチャルマーケット2021にてパーティクル班の1人としてエフェクトのお手伝いをしました。（シェーダー・パーティクル・Udon#など）<br>わかりやすい作品としては渋谷交差点の演出やスピスバマラの魚群などなどです。<a href="https://twitter.com/hashtag/Vket?src=hash&amp;ref_src=twsrc%5Etfw">#Vket</a> <a href="https://twitter.com/hashtag/Vket2021?src=hash&amp;ref_src=twsrc%5Etfw">#Vket2021</a> <a href="https://twitter.com/hashtag/VRChat?src=hash&amp;ref_src=twsrc%5Etfw">#VRChat</a> <a href="https://t.co/xag3cbYZf9">pic.twitter.com/xag3cbYZf9</a></blockquote>
+                                            <figcaption>&mdash; noriben🌒 (@noriben327) <a href="https://twitter.com/noriben327/status/1467417463361261569?ref_src=twsrc%5Etfw">December 5, 2021</a></figcaption>
+                                        </figure>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">9</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">ラピスリライツ・スターズ1st Orchestra『LIGHT UP the MAGIC』</h5>
+                                        <p>アニメ「ラピスリライツ」のオンラインライブ用のAR演出用エフェクトの作成</p>
+                                        <p class="entry-links"><a href="https://twitter.com/noriben327/status/1435224077409546241">https://twitter.com/noriben327/status/1435224077409546241</a></p>
+                                        <ul class="tags"><li>Unity</li><li>Shader</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">7</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">ARイベント用エフェクト制作（非公開）</h5>
+                                        <p>ARイベント用のエフェクトの制作</p>
+                                        <ul class="tags"><li>Unity</li><li>Shader</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">7</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">渋谷区立宮下公園 Powered by PARALLEL SITE</h5>
+                                        <p>宮下公園をバーチャル上に再現するプロジェクトにおいてエフェクトやギミックの作成</p>
+                                        <p class="entry-links"><a href="https://shibuya-miyashitapark.parallel-city.jp/">https://shibuya-miyashitapark.parallel-city.jp/</a></p>
+                                        <ul class="tags"><li>Unity</li><li>Shader</li><li>U#</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">4</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">GameVketZero</h5>
+                                        <p>GooglePlay, Microsoftブース用のエフェクト制作</p>
+                                        <p class="entry-links"><a href="https://twitter.com/noriben327/status/1388106905806000136">https://twitter.com/noriben327/status/1339537060542119936</a></p>
+                                        <ul class="tags"><li>Unity</li><li>Shader</li><li>U#</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">3</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">Noriben AQUARIUM（魚パーティクルと餌やり機能付きアクアリウムセット）</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/2802412">https://noriben.booth.pm/items/2802412</a></p>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </section>
+
+                        <section class="year">
+                            <h4 class="year-label"><span>2020</span></h4>
+                            <div class="year-entries">
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">12</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">バーチャルマーケット5</h5>
+                                        <p>デュエルマスターズブースのクリーチャー用エフェクト制作<br/>
+                                            ランウェイのムービングライト演出制作。</p>
+                                        <p class="entry-links">
+                                            <a href="https://twitter.com/noriben327/status/1339537060542119936">https://twitter.com/noriben327/status/1339537060542119936</a><br/>
+                                            <a href="https://twitter.com/noriben327/status/1339197228443824129">https://twitter.com/noriben327/status/1339197228443824129</a>
+                                        </p>
+                                        <ul class="tags"><li>Unity</li><li>Shader</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">9</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">東京タワー花火大会XR 〜COSMIC FLOWER〜</h5>
+                                        <p>VtuberのAR配信ライブ演出。花火のエフェクト担当</p>
+                                        <p class="entry-links"><a href="https://www.youtube.com/watch?v=zdYwi_9OdBQ">https://www.youtube.com/watch?v=zdYwi_9OdBQ</a></p>
+                                        <ul class="tags"><li>Unity</li><li>Shader</li></ul>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">6</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">レーザーライトシェーダー / LaserLightShader</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/2141514">https://noriben.booth.pm/items/2141514</a></p>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </section>
+
+                        <section class="year">
+                            <h4 class="year-label"><span>2019</span></h4>
+                            <div class="year-entries">
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">12</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">Noriben Fireworks（花火パーティクル）</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/1724776">https://noriben.booth.pm/items/1724776</a></p>
+                                    </div>
+                                </article>
+
+                                <article class="entry entry--product">
+                                    <div class="entry-date"><span class="mon">10</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">ビームライトシェーダー / BeamLightShader</h5>
+                                        <p class="entry-links"><a href="https://noriben.booth.pm/items/1637978">https://noriben.booth.pm/items/1637978</a></p>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </section>
+
+                        <section class="year">
+                            <h4 class="year-label"><span>2018</span></h4>
+                            <div class="year-entries">
+
+                                <article class="entry">
+                                    <div class="entry-date"><span class="mon">12</span></div>
+                                    <div class="entry-main">
+                                        <h5 class="entry-title">第0回VR建築コンテスト VoxelKei賞、受賞</h5>
+                                        <p>エフェクトを使用した建築への表現。</p>
+                                        <p class="entry-links"><a href="https://xrarchiweb.wixsite.com/xrarchi/contest0">https://xrarchiweb.wixsite.com/xrarchi/contest0</a></p>
+                                        <ul class="tags"><li>Unity</li></ul>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </section>
+
                     </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2023/7 バーチャルマーケット2023 Summer</div>
-                            <p>VRイベント用のエフェクト・シェーダー制作<br/>
-                                <a href="https://event.vket.com/">https://event.vket.com/</a><br/>
-                                [Unity(Built-in), Shader]
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2023/6 JT Tobacco Farm</div>
-                            <p>VRChatワールド用のエフェクト・シェーダー制作<br/>
-                                <a href="https://prtimes.jp/main/html/rd/p/000000010.000101057.html">JT グループのサステナビリティの取り組みを体験できるメタバース空間「JT Tobacco Farm」を公開</a><br/>
-                                [Unity(Built-in), Shader, U#]
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2022/12 バーチャルマーケット2022 Winter</div>
-                            <p>VRイベント用のエフェクト・シェーダー制作<br/>
-                                <a href="https://winter2022.vket.com/">https://winter2022.vket.com/</a><br/>
-                                [Unity(Built-in), Shader]
-                            </p>
-                            <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">現在開催されているバーチャルマーケット2022Winterにてパーティクル班の1人としてエフェクトのお手伝いをしました～。（シェーダー・パーティクルなど）<a href="https://twitter.com/hashtag/Vket?src=hash&amp;ref_src=twsrc%5Etfw">#Vket</a> <a href="https://twitter.com/hashtag/VRChat?src=hash&amp;ref_src=twsrc%5Etfw">#VRChat</a> <a href="https://t.co/Q0Wji1T2GT">pic.twitter.com/Q0Wji1T2GT</a></p>&mdash; noriben🌕 (@noriben327) <a href="https://twitter.com/noriben327/status/1601168780729626625?ref_src=twsrc%5Etfw">December 9, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2022/11 メタバース用エフェクト制作（非公開）</div>
-                            <p>メタバースの体験型イベント用のエフェクトの制作<br/>
-                                [Unity(URP), Shader, VFXGraph, C#]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2022/10 メタバース用エフェクト制作（非公開）</div>
-                            <p>メタバースの体験型イベント用のエフェクトの制作<br/>
-                                [Unity(URP), Shader, VFXGraph]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2022/10 ARライブ用エフェクト制作（非公開）</div>
-                            <p>ARライブ用のエフェクトの制作<br/>
-                                [Unity(Built-in), Shader]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2022/8 メタバース用エフェクト制作（非公開）</div>
-                            <p>メタバースの体験型イベント用のエフェクトの制作<br/>
-                                [Unity(URP), Shader, VFXGraph]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2022/6 VRライブ用エフェクト制作（非公開）</div>
-                            <p>VRライブ用のエフェクトの制作<br/>
-                                [Unity(HDRP), Shader, VFXGraph]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2022/4 バーチャルマーケット2022 Summer</div>
-                            <p>VRイベント用のエフェクト制作<br/>
-                                <a href="https://summer2022.vket.com/">https://summer2022.vket.com/</a><br/>
-                                [Unity(Built-in), Shader]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2022/2 ARライブ用エフェクト制作（非公開）</div>
-                            <p>ARライブ用のエフェクトの制作<br/>
-                                [Unity(Built-in), Shader]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2021/12 ARライブ用エフェクト制作（非公開）</div>
-                            <p>ARライブ用のエフェクトの制作<br/>
-                                [Unity(Built-in), Shader, C#]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2021/12 バーチャルマーケット2021</div>
-                            <p>VRイベント用のエフェクト制作<br/>
-                                <a href="https://winter2021.vket.com/">https://winter2021.vket.com/</a><br/>
-                                [Unity(Built-in), Shader, U#]
-                            </p>
-                            <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">現在開催されているバーチャルマーケット2021にてパーティクル班の1人としてエフェクトのお手伝いをしました。（シェーダー・パーティクル・Udon#など）<br>わかりやすい作品としては渋谷交差点の演出やスピスバマラの魚群などなどです。<a href="https://twitter.com/hashtag/Vket?src=hash&amp;ref_src=twsrc%5Etfw">#Vket</a> <a href="https://twitter.com/hashtag/Vket2021?src=hash&amp;ref_src=twsrc%5Etfw">#Vket2021</a> <a href="https://twitter.com/hashtag/VRChat?src=hash&amp;ref_src=twsrc%5Etfw">#VRChat</a> <a href="https://t.co/xag3cbYZf9">pic.twitter.com/xag3cbYZf9</a></p>&mdash; noriben🌒 (@noriben327) <a href="https://twitter.com/noriben327/status/1467417463361261569?ref_src=twsrc%5Etfw">December 5, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                            
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2021/9 ラピスリライツ・スターズ1st Orchestra『LIGHT UP the MAGIC』</div>
-                            <p>アニメ「ラピスリライツ」のオンラインライブ用のAR演出用エフェクトの作成<br/>
-                                <a href="https://twitter.com/noriben327/status/1435224077409546241">https://twitter.com/noriben327/status/1435224077409546241</a><br/>
-                                [Unity, Shader]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2021/7 ARイベント用エフェクト制作（非公開）</div>
-                            <p>ARイベント用のエフェクトの制作<br/>
-                                [Unity, Shader]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2021/7 渋谷区立宮下公園 Powered by PARALLEL SITE</div>
-                            <p>宮下公園をバーチャル上に再現するプロジェクトにおいてエフェクトやギミックの作成<br/>
-                                <a href="https://shibuya-miyashitapark.parallel-city.jp/">https://shibuya-miyashitapark.parallel-city.jp/</a><br/>
-                                [Unity, Shader, U#]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2021/4 GameVketZero</div>
-                            <p>GooglePlay, Microsoftブース用のエフェクト制作<br/>
-                                <a href="https://twitter.com/noriben327/status/1388106905806000136">https://twitter.com/noriben327/status/1339537060542119936</a><br/>
-                                [Unity, Shader, U#]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2020/12 バーチャルマーケット5</div>
-                            <p>デュエルマスターズブースのクリーチャー用エフェクト制作<br/>
-                                ランウェイのムービングライト演出制作。<br/>
-                                <a href="https://twitter.com/noriben327/status/1339537060542119936">https://twitter.com/noriben327/status/1339537060542119936</a><br/>
-                                <a href="https://twitter.com/noriben327/status/1339197228443824129">https://twitter.com/noriben327/status/1339197228443824129</a><br/>
-                                [Unity, Shader]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2020/9 東京タワー花火大会XR 〜COSMIC FLOWER〜</div>
-                            <p>VtuberのAR配信ライブ演出。花火のエフェクト担当<br/>
-                                <a href="https://www.youtube.com/watch?v=zdYwi_9OdBQ">https://www.youtube.com/watch?v=zdYwi_9OdBQ</a><br/>
-                                [Unity, Shader]</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <div class="subheading mb-1">2018/12 第0回VR建築コンテスト VoxelKei賞、受賞</div>
-
-                            
-                            <p>エフェクトを使用した建築への表現。<br/>
-                                <a href="https://xrarchiweb.wixsite.com/xrarchi/contest0">https://xrarchiweb.wixsite.com/xrarchi/contest0</a><br/>
-                                [Unity]</p>
-                        </div>
-                    </div>
-
                 </div>
             </section>
-            <hr class="m-0" />
 
-            <!-- Links-->
-            <section class="resume-section" id="links">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Links</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                        
-                            <h4 class="mb-0">Booth</h3>
-                            <p>
-                            UnityやVRChat等で使用できるエフェクトなどの販売
-                            <br/>
-                            <a href="https://noriben.booth.pm/">https://noriben.booth.pm/</a>
-                            </p>
-
-                            
-                            <h4 class="mb-0">Youtube</h3>
-                                <p>
-                                作ったエフェクトのサンプル動画など
-                                <br/>
-                                <a href="https://www.youtube.com/c/noriben">https://www.youtube.com/c/noriben</a>
-                                </p>
-
-                            <h4 class="mb-0">Neort</h3>
-                                <p>
-                                書いたシェーダー(GLSL)
-                                <br/>
-                                <a href="https://neort.io/vAMwJKARLdhDZyEjEYWJlgYfnGZ2">https://neort.io/vAMwJKARLdhDZyEjEYWJlgYfnGZ2</a>
-                                </p>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-            <hr class="m-0" />
-
-            <!-- Contact-->
-            <section class="resume-section" id="contact">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Contact</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h4 class="mb-0">X</h4>
-                            <p><a href="https://x.com/noriben327">https://x.com/noriben327</a></p>
-                        </div>
+            <!-- Links -->
+            <section class="section" id="links">
+                <div class="wrap">
+                    <h2 class="section-title">Links</h2>
+                    <div class="cards">
+                        <a class="card" href="https://noriben.booth.pm/">
+                            <h4 class="card-title">Booth</h4>
+                            <p class="card-desc">UnityやVRChat等で使用できるエフェクトなどの販売</p>
+                            <span class="card-url">https://noriben.booth.pm/</span>
+                        </a>
+                        <a class="card" href="https://www.youtube.com/c/noriben">
+                            <h4 class="card-title">Youtube</h4>
+                            <p class="card-desc">作ったエフェクトのサンプル動画など</p>
+                            <span class="card-url">https://www.youtube.com/c/noriben</span>
+                        </a>
+                        <a class="card" href="https://neort.io/vAMwJKARLdhDZyEjEYWJlgYfnGZ2">
+                            <h4 class="card-title">Neort</h4>
+                            <p class="card-desc">書いたシェーダー(GLSL)</p>
+                            <span class="card-url">https://neort.io/vAMwJKARLdhDZyEjEYWJlgYfnGZ2</span>
+                        </a>
                     </div>
                 </div>
             </section>
-            <hr class="m-0" />
-        </div>
 
-<!--
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <!--
+            <!-- Contact -->
+            <section class="section section--last" id="contact">
+                <div class="wrap">
+                    <h2 class="section-title">Contact</h2>
+                    <div class="cards">
+                        <a class="card" href="https://x.com/noriben327">
+                            <h4 class="card-title">X</h4>
+                            <span class="card-url">https://x.com/noriben327</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
         <script src="js/scripts.js"></script>
-        -->
     </body>
 </html>
