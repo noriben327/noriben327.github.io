@@ -33,7 +33,6 @@
                                  rgba(237, 181, 198, 0.45) 28%,
                                  var(--line) 72%);
 
-  --rail-w: 13rem;
   --bar-h: 3.75rem;
   --wrap: 60rem;
 
@@ -92,29 +91,44 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ----------------------------------------------------------------- nav -- */
+/* One slim bar at every breakpoint. It stays out of the way while the hero
+   is on screen — which is also why the hero avatar is never duplicated. */
 
 .rail {
   position: fixed;
-  inset: 0 auto 0 0;
+  inset: 0 0 auto 0;
   z-index: 50;
-  width: var(--rail-w);
+  height: var(--bar-h);
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2.25rem 1.5rem;
-  background: var(--surface);
-  border-right: 1px solid var(--line);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+  background: rgba(27, 27, 31, 0.82);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  transition: transform 320ms var(--ease), opacity 240ms var(--ease);
+}
+
+/* Set by scripts.js while #about still fills the viewport. */
+.rail[data-tucked] {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .rail-brand {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
   text-decoration: none;
   color: inherit;
 }
 
 .rail-avatar {
-  width: 64px;
-  height: 64px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   border: 1px solid var(--line-strong);
   transition: border-color 200ms var(--ease);
@@ -122,55 +136,54 @@ h1, h2, h3, h4, h5 {
 .rail-brand:hover .rail-avatar { border-color: var(--accent-soft); }
 
 .rail-brand-text {
-  display: none;
   font-family: var(--font-en);
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .rail-toggle { display: none; }
 
 .rail-nav ul {
   display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
+  align-items: center;
+  gap: clamp(0.75rem, 2.5vw, 2rem);
 }
 
 .rail-nav a {
   position: relative;
   display: block;
-  padding: 0.4rem 0 0.4rem 0.85rem;
+  padding: 0.35rem 0;
   font-family: var(--font-en);
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.01em;
   color: var(--muted);
   text-decoration: none;
+  white-space: nowrap;
   transition: color 180ms var(--ease);
 }
 
-.rail-nav a::before {
+/* Active marker sits under the label now that the nav runs horizontally. */
+.rail-nav a::after {
   content: "";
   position: absolute;
   left: 0;
-  top: 50%;
-  width: 2px;
-  height: 0;
-  background: linear-gradient(180deg, #d6d6dc, var(--accent));
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #d6d6dc, var(--accent));
   border-radius: 2px;
-  transform: translateY(-50%);
-  transition: height 220ms var(--ease);
+  transition: width 220ms var(--ease);
 }
 
 .rail-nav a:hover { color: var(--text-2); }
 
 .rail-nav a.is-active { color: var(--text); }
-.rail-nav a.is-active::before { height: 1.1em; }
+.rail-nav a.is-active::after { width: 100%; }
 
 /* --------------------------------------------------------------- shell -- */
-
-.shell { margin-left: var(--rail-w); }
 
 .wrap {
   width: 100%;
@@ -181,7 +194,7 @@ h1, h2, h3, h4, h5 {
 .section {
   padding: clamp(4.5rem, 9vw, 7.5rem) clamp(1.25rem, 5vw, 4rem);
   border-bottom: 1px solid var(--line);
-  scroll-margin-top: 1rem;
+  scroll-margin-top: var(--bar-h);
 }
 /* Extra tail room so the final section can actually reach the scrollspy
    probe — otherwise Links and Contact share the last screen and Links
@@ -609,34 +622,8 @@ a {
 /* ------------------------------------------------------------ mobile ---- */
 
 @media (max-width: 768px) {
-  body { padding-top: var(--bar-h); }
-
-  .shell { margin-left: 0; }
-
-  .rail {
-    inset: 0 0 auto 0;
-    width: 100%;
-    height: var(--bar-h);
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0;
-    padding: 0 1rem;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-    background: rgba(17, 17, 18, 0.92);
-    backdrop-filter: blur(12px);
-    transition: height 260ms var(--ease);
-  }
-
-  .rail-brand {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-  }
-  .rail-avatar { width: 34px; height: 34px; }
-  .rail-brand-text { display: block; }
-
+  /* Only the collapsing menu differs on small screens; the bar itself is
+     already the same element at every width. */
   .rail-toggle {
     display: grid;
     gap: 4px;
@@ -675,13 +662,32 @@ a {
     max-height: 18rem;
     border-bottom-color: var(--line);
   }
-  .rail-nav ul { padding: 0.5rem 1rem 1rem; }
+  .rail-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.15rem;
+    padding: 0.5rem 1rem 1rem;
+  }
   .rail-nav a {
     padding: 0.65rem 0 0.65rem 0.85rem;
     font-size: 0.95rem;
   }
+  /* Stacked menu: the marker goes back to a bar on the left edge. */
+  .rail-nav a::after {
+    left: 0;
+    top: 50%;
+    bottom: auto;
+    width: 2px;
+    height: 0;
+    transform: translateY(-50%);
+    background: linear-gradient(180deg, #d6d6dc, var(--accent));
+    transition: height 220ms var(--ease);
+  }
+  .rail-nav a.is-active::after {
+    width: 2px;
+    height: 1.1em;
+  }
 
-  .section { scroll-margin-top: var(--bar-h); }
   .section--hero { min-height: auto; }
 
   .year {

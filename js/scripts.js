@@ -3,28 +3,47 @@
 //
 
 (() => {
+    const rail = document.querySelector('.rail');
     const nav = document.getElementById('railNav');
     const toggle = document.querySelector('.rail-toggle');
     const links = Array.from(document.querySelectorAll('.rail-nav a[href^="#"]'));
+    const hero = document.getElementById('about');
+    const mobile = window.matchMedia('(max-width: 768px)');
 
     // --- Mobile menu -------------------------------------------------------
 
-    const closeMenu = () => {
-        nav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
+    const setMenuOpen = (open, restoreFocus = false) => {
+        if (!nav || !toggle) return;
+        nav.classList.toggle('is-open', open);
+        nav.toggleAttribute('inert', mobile.matches && !open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+        if (!open && restoreFocus) toggle.focus();
     };
+
+    const closeMenu = (restoreFocus = false) => setMenuOpen(false, restoreFocus);
 
     if (toggle && nav) {
         toggle.addEventListener('click', () => {
-            const open = nav.classList.toggle('is-open');
-            toggle.setAttribute('aria-expanded', String(open));
+            setMenuOpen(!nav.classList.contains('is-open'));
         });
 
-        links.forEach((link) => link.addEventListener('click', closeMenu));
+        links.forEach((link) => link.addEventListener('click', () => closeMenu()));
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeMenu();
+            if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+                closeMenu(true);
+            }
         });
+
+        document.addEventListener('click', (e) => {
+            if (mobile.matches && nav.classList.contains('is-open') && !rail.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        mobile.addEventListener('change', () => closeMenu());
+        closeMenu();
     }
 
     // --- Scrollspy ---------------------------------------------------------
@@ -44,11 +63,40 @@
         if (id === current) return;
         current = id;
         links.forEach((link) => {
-            link.classList.toggle('is-active', link.getAttribute('href') === '#' + id);
+            const active = link.getAttribute('href') === '#' + id;
+            link.classList.toggle('is-active', active);
+            if (active) {
+                link.setAttribute('aria-current', 'location');
+            } else {
+                link.removeAttribute('aria-current');
+            }
         });
     };
 
+    // --- Bar visibility ----------------------------------------------------
+    // The bar stays tucked away while the hero owns the screen, which keeps
+    // the hero full-bleed and stops the avatar appearing twice at once.
+
+    const barHeight = () =>
+        parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--bar-h'))
+            * parseFloat(getComputedStyle(document.documentElement).fontSize) || 60;
+
+    const updateBar = () => {
+        if (!rail || !hero) return;
+        const tuck = hero.getBoundingClientRect().bottom > barHeight();
+        if (tuck === rail.hasAttribute('data-tucked')) return;
+        rail.toggleAttribute('inert', tuck);
+        if (tuck) {
+            rail.setAttribute('data-tucked', '');
+            closeMenu();
+        } else {
+            rail.removeAttribute('data-tucked');
+        }
+    };
+
     const update = () => {
+        updateBar();
+
         const probe = window.innerHeight * 0.35;
         const atBottom =
             window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
