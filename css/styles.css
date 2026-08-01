@@ -193,6 +193,7 @@ h1, h2, h3, h4, h5 {
 
 .section-title {
   position: relative;
+  color: var(--accent);
   font-family: var(--font-en);
   font-size: clamp(1.35rem, 2.6vw, 1.85rem);
   font-weight: 300;
@@ -275,7 +276,7 @@ h1, h2, h3, h4, h5 {
 }
 .hero-title .accent {
   display: block;
-  color: var(--muted);
+  color: var(--accent);
   font-weight: 400;
 }
 
@@ -402,14 +403,16 @@ a {
 
 .year {
   display: grid;
-  grid-template-columns: 7.5rem minmax(0, 1fr);
+  grid-template-columns: 9rem minmax(0, 1fr);
   gap: 0 1.5rem;
   align-items: start;
 }
 
 /* Deliberately NOT sticky — the year scrolls away with its group. */
 .year-label {
-  font-family: var(--font-en);
+  /* JP stack: Inter Tight has no 年/月, so those fall through to Noto Sans JP. */
+  font-family: var(--font-jp);
+  white-space: nowrap;
   font-size: 2.1rem;
   font-weight: 200;
   font-variant-numeric: tabular-nums;
@@ -433,7 +436,7 @@ a {
    that varies is the pink edge. Entries are not links, so no hover state. */
 .entry {
   display: grid;
-  grid-template-columns: 2.25rem minmax(0, 1fr);
+  grid-template-columns: 3.25rem minmax(0, 1fr);
   gap: 0 0.9rem;
   padding: clamp(1rem, 2.2vw, 1.4rem);
   background: var(--surface);
@@ -441,12 +444,32 @@ a {
   border-radius: var(--r);
 }
 
-/* Booth releases — the sole distinction in the timeline. */
-.entry--product { border-left: 2px solid var(--accent); }
+/* Booth releases — pink edge plus a square product shot. Client work has
+   no equivalent imagery, so those entries simply run without the column. */
+.entry--product {
+  border-left: 2px solid var(--accent);
+  grid-template-columns: 3.25rem 5.5rem minmax(0, 1fr);
+}
+
+.entry-thumb {
+  display: block;
+  width: 5.5rem;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+}
+.entry-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .entry-date .mon {
   display: block;
-  font-family: var(--font-en);
+  font-family: var(--font-jp);
+  white-space: nowrap;
   font-size: 0.95rem;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
@@ -674,6 +697,14 @@ a {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
   }
+  /* Month on its own row, then thumbnail beside the text. */
+  .entry--product {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 0 0.85rem;
+  }
+  .entry--product .entry-date { grid-column: 1 / -1; }
+  .entry-thumb { width: 4.5rem; }
+
   .entry-date .mon {
     text-align: left;
     line-height: 1.4;
