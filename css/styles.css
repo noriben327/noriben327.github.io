@@ -239,7 +239,7 @@ h1, h2, h3, h4, h5 {
 .section--hero {
   position: relative;
   overflow: hidden;
-  min-height: min(100vh, 46rem);
+  min-height: min(88vh, 42rem);
   display: flex;
   align-items: center;
 }
